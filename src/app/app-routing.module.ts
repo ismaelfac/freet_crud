@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DriversComponent } from './drivers/drivers.component';
-import { RoutesComponent } from './routes/routes.component';
-import { SchedulersComponent } from './schedulers/schedulers.component';
-import { VehiclesComponent } from './vehicles/vehicles.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DriverComponent } from './components/driver/driver.component';
+import { RoutesComponent } from './components/routes/routes.component';
+import { SchedulerComponent } from './components/scheduler/scheduler.component';
+import { VehiclesComponent } from './components/vehicles/vehicles.component';
 
 const routes: Routes = [
   {  path: '', component: DashboardComponent },
+  {  path: 'drivers', component: DriverComponent },
   {  path: 'vehicles', component: VehiclesComponent },
-  {  path: 'drivers', component: DriversComponent },
   {  path: 'routes', component: RoutesComponent },
-  {  path: 'schedulers', component: SchedulersComponent },
+  {  path: 'schedulers', component: SchedulerComponent },
   { path: '**', redirectTo: '/auth/login', pathMatch: 'full'}
 ];
 
