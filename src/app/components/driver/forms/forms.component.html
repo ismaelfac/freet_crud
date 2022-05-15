@@ -1,34 +1,51 @@
-<form action="">
-    <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1">@</span>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+<div class="card">
+    <div class="card-header">
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand">Conductor</a>
+              <form class="d-flex">
+                <a class="btn btn-outline-success" routerLink="/drivers">Listado de Conductores</a>
+              </form>
+            </div>
+          </nav>
     </div>
-    
-    <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-    <span class="input-group-text" id="basic-addon2">@example.com</span>
+    <div class="card-body">
+        <form action="" class="row g-3">
+            <div class="form-floating">
+                <input class="form-control" type="text" name="first_name" [(ngModel)]="driver.first_name"/>
+                <label for="floatingTextarea">Nombres</label>
+            </div>
+            <div class="form-floating">
+                <input class="form-control" name="last_name" [(ngModel)]="driver.last_name" placeholder="Leave a comment here"/>
+                <label for="floatingTextarea">Apellidos</label>
+            </div>
+            <div class="form-floating">
+                <input class="form-control" name="ssn" [(ngModel)]="driver.ssn" placeholder="Leave a comment here"/>
+                <label for="floatingTextarea">SSN</label>
+            </div>
+            <div class="form-floating">
+                <input class="form-control" name="dob" type="date" [(ngModel)]="driver.dob" placeholder="Leave a comment here"/>
+                <label for="floatingTextarea">Fecha de Nacimiento</label>
+            </div>
+            <div class="form-floating">
+                <input class="form-control" name="address" [(ngModel)]="driver.address" placeholder="Leave a comment here"/>
+                <label for="floatingTextarea">Direccion</label>
+            </div>
+            <div class="form-floating">
+                <input class="form-control" name="city" [(ngModel)]="driver.city" placeholder="Leave a comment here"/>
+                <label for="floatingTextarea">Ciudad</label>
+            </div>
+            <div class="form-floating">
+                <input class="form-control" name="zip" type="string" [(ngModel)]="driver.zip" placeholder="Leave a comment here"/>
+                <label for="floatingTextarea">Zip</label>
+            </div>
+            <div class="form-floating">
+                <input class="form-control" name="phone" type="text" [(ngModel)]="driver.phone" placeholder="Leave a comment here"/>
+                <label for="floatingTextarea">Telefono</label>
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button" (click)="createOnUpdate()">Grabar</button>
+              </div>
+        </form>
     </div>
-    
-    <label for="basic-url" class="form-label">Your vanity URL</label>
-    <div class="input-group mb-3">
-    <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
-    <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-    </div>
-    
-    <div class="input-group mb-3">
-    <span class="input-group-text">$</span>
-    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-    <span class="input-group-text">.00</span>
-    </div>
-    
-    <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Username" aria-label="Username">
-    <span class="input-group-text">@</span>
-    <input type="text" class="form-control" placeholder="Server" aria-label="Server">
-    </div>
-    
-    <div class="input-group">
-    <span class="input-group-text">With textarea</span>
-    <textarea class="form-control" aria-label="With textarea"></textarea>
-    </div>
-</form>
+  </div>

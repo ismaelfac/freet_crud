@@ -12,9 +12,31 @@ export class ListComponent implements OnInit {
   constructor(private driversService: DriversService) { }
   listDrivers: any = [];
   ngOnInit(): void {
+    this.getDriver();
+  }
+
+  getDriver(){
     this.driversService.getDrivers().subscribe(
       res => {
         this.listDrivers = res;
+      },
+      err => console.log(err)
+    );
+  }
+
+  updateDriver(id:string, driver: Driver){
+    this.driversService.updateDriver(id, driver).subscribe(
+      res => {
+        this.getDriver();
+      },
+      err => console.log(err)
+    );
+  }
+
+  deleteDriver(id:string){
+    this.driversService.deleteDriver(id).subscribe(
+      res => {
+        this.getDriver();
       },
       err => console.log(err)
     );
