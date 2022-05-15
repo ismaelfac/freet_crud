@@ -7,6 +7,8 @@ import { VehiclesFormComponent} from './components/vehicles/vehicles-form/vehicl
 import { RoutesComponent } from './components/routes/routes.component';
 import { SchedulerComponent } from './components/scheduler/scheduler.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
+import { RoutesFormComponent } from './components/routes/routes-form/routes-form.component';
+import { SchedulerFormComponent } from './components/scheduler/scheduler-form/scheduler-form.component';
 
 const routes: Routes = [
   {  path: '', component: DashboardComponent },
@@ -17,7 +19,11 @@ const routes: Routes = [
   {  path: 'vehicles/create', component: VehiclesFormComponent },
   {  path: 'vehicles/edit/:id', component: VehiclesFormComponent },
   {  path: 'routes', component: RoutesComponent },
+  {  path: 'routes/create', component: RoutesFormComponent },
+  {  path: 'routes/edit/:id', component: RoutesFormComponent },
   {  path: 'schedulers', component: SchedulerComponent },
+  {  path: 'schedulers/create', component: SchedulerFormComponent },
+  {  path: 'schedulers/edit/:id', component: SchedulerFormComponent },
   { path: '**', redirectTo: '/auth/login', pathMatch: 'full'}
 ];
 

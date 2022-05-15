@@ -1,1 +1,25 @@
-<p>routes-list works!</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Conductor</th>
+        <th scope="col">Vehiculo</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider" *ngFor="let route of listRoutes">
+      <tr>
+        <th scope="row">{{ route.id }}</th>
+        <td></td>
+        <td></td>
+        <td>{{ route.description}}</td>
+        <td>
+          <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+              <button type="button" class="btn btn-warning" [routerLink]="['/routes/edit', route.id]">Editar</button>
+              <button type="button" class="btn btn-danger" (click)="deleteRoute(route.id)">Eliminar</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>

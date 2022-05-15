@@ -24,6 +24,8 @@ import { VehiclesListComponent } from './components/vehicles/vehicles-list/vehic
 import { RoutesFormComponent } from './components/routes/routes-form/routes-form.component';
 import { RoutesListComponent } from './components/routes/routes-list/routes-list.component';
 import { LoginComponent } from './components/login/login.component';
+import { SchedulerFormComponent } from './components/scheduler/scheduler-form/scheduler-form.component';
+import { SchedulerListComponent } from './components/scheduler/scheduler-list/scheduler-list.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +42,8 @@ import { LoginComponent } from './components/login/login.component';
     RoutesFormComponent,
     RoutesListComponent,
     LoginComponent,
+    SchedulerFormComponent,
+    SchedulerListComponent,
   ],
   imports: [
     BrowserModule,
