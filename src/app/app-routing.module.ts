@@ -9,9 +9,11 @@ import { SchedulerComponent } from './components/scheduler/scheduler.component';
 import { VehiclesComponent } from './components/vehicles/vehicles.component';
 import { RoutesFormComponent } from './components/routes/routes-form/routes-form.component';
 import { SchedulerFormComponent } from './components/scheduler/scheduler-form/scheduler-form.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
-  {  path: '', component: DashboardComponent },
+  {  path: '', component: DashboardComponent, pathMatch: "full" },
   {  path: 'drivers', component: DriverComponent },
   {  path: 'drivers/create', component: FormsComponent },
   {  path: 'drivers/edit/:id', component: FormsComponent },
@@ -24,6 +26,8 @@ const routes: Routes = [
   {  path: 'schedulers', component: SchedulerComponent },
   {  path: 'schedulers/create', component: SchedulerFormComponent },
   {  path: 'schedulers/edit/:id', component: SchedulerFormComponent },
+  { path: "login", component: LoginComponent, pathMatch: "full" },
+  { path: "register", component: RegisterComponent, pathMatch: "full" },
   { path: '**', redirectTo: '/auth/login', pathMatch: 'full'}
 ];
 

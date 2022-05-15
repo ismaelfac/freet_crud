@@ -26,6 +26,8 @@ import { RoutesListComponent } from './components/routes/routes-list/routes-list
 import { LoginComponent } from './components/login/login.component';
 import { SchedulerFormComponent } from './components/scheduler/scheduler-form/scheduler-form.component';
 import { SchedulerListComponent } from './components/scheduler/scheduler-list/scheduler-list.component';
+import { RegisterComponent } from './components/register/register.component';
+import { CookieService } from 'ngx-cookie-service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +46,7 @@ import { SchedulerListComponent } from './components/scheduler/scheduler-list/sc
     LoginComponent,
     SchedulerFormComponent,
     SchedulerListComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +56,8 @@ import { SchedulerListComponent } from './components/scheduler/scheduler-list/sc
     HttpClientModule
   ],
   providers: [
-    DriversService
+    DriversService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })
