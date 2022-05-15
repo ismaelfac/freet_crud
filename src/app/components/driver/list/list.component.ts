@@ -8,13 +8,26 @@ import { DriversService } from 'src/app/services/drivers.service';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-
-  constructor(private driversService: DriversService) { }
   listDrivers: any = [];
+  constructor(private driversService: DriversService) { }
+  
   ngOnInit(): void {
+    this.getDriver();
+  }
+
+  getDriver(){
     this.driversService.getDrivers().subscribe(
       res => {
         this.listDrivers = res;
+      },
+      err => console.log(err)
+    );
+  }
+
+  deleteDriver(id:string){
+    this.driversService.deleteDriver(id).subscribe(
+      res => {
+        this.getDriver();
       },
       err => console.log(err)
     );
