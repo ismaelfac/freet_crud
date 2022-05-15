@@ -19,6 +19,11 @@ import { ListComponent } from './components/driver/list/list.component';
 
 import { DriversService } from './services/drivers.service'
 import { HttpClientModule } from '@angular/common/http';
+import { VehiclesFormComponent } from './components/vehicles/vehicles-form/vehicles-form.component';
+import { VehiclesListComponent } from './components/vehicles/vehicles-list/vehicles-list.component';
+import { RoutesFormComponent } from './components/routes/routes-form/routes-form.component';
+import { RoutesListComponent } from './components/routes/routes-list/routes-list.component';
+import { LoginComponent } from './components/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +35,11 @@ import { HttpClientModule } from '@angular/common/http';
     SchedulerComponent,
     FormsComponent,
     ListComponent,
+    VehiclesFormComponent,
+    VehiclesListComponent,
+    RoutesFormComponent,
+    RoutesListComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

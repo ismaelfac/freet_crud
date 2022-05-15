@@ -1,0 +1,35 @@
+<div class="card">
+    <div class="card-header">
+        <nav class="navbar bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand">Conductor</a>
+              <form class="d-flex">
+                <a class="btn btn-outline-success" routerLink="/vehicles">Listado de Vehiculos</a>
+              </form>
+            </div>
+          </nav>
+    </div>
+    <div class="card-body">
+        <form action="" class="row g-3">
+            <div class="form-floating">
+                <input class="form-control" type="text" name="first_name" [(ngModel)]="vehicle.description"/>
+                <label for="floatingTextarea">Descripcion</label>
+            </div>
+            <div class="form-floating">
+                <input class="form-control" name="last_name" [(ngModel)]="vehicle.year" placeholder="Leave a comment here"/>
+                <label for="floatingTextarea">Año del Vehiculo</label>
+            </div>
+            <div class="form-floating">
+                <input class="form-control" name="ssn" [(ngModel)]="vehicle.make" placeholder="Leave a comment here"/>
+                <label for="floatingTextarea">Funcion</label>
+            </div>
+            <div class="form-floating">
+                <input class="form-control" name="address" [(ngModel)]="vehicle.capacity" placeholder="Leave a comment here"/>
+                <label for="floatingTextarea">Capacidad</label>
+            </div>
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button" (click)="editing ? updateVehicle() : createVehicle()">{{ editing ? 'Actualizar': 'Crear'}}</button>
+            </div>
+        </form>
+    </div>
+  </div>
