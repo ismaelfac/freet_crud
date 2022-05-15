@@ -24,15 +24,6 @@ export class RoutesListComponent implements OnInit {
     );
   }
 
-  editRoute(id:string, route: Route){
-    this.routesService.updateRoute(id, route).subscribe(
-      res => {
-        this.getRoute();
-      },
-      err => console.log(err)
-    );
-  }
-
   deleteRoute(id:string){
     this.routesService.deleteRoute(id).subscribe(
       res => {

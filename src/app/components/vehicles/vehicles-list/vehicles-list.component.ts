@@ -23,15 +23,6 @@ export class VehiclesListComponent implements OnInit {
     );
   }
 
-  editVehicle(id:string, Vehicle: Vehicle){
-    this.vehiclesService.updateVehicle(id, Vehicle).subscribe(
-      res => {
-        this.getVehicle();
-      },
-      err => console.log(err)
-    );
-  }
-
   deleteVehicle(id:string){
     this.vehiclesService.deleteVehicle(id).subscribe(
       res => {

@@ -24,15 +24,6 @@ export class ListComponent implements OnInit {
     );
   }
 
-  editDriver(id:string, driver: Driver){
-    this.driversService.updateDriver(id, driver).subscribe(
-      res => {
-        this.getDriver();
-      },
-      err => console.log(err)
-    );
-  }
-
   deleteDriver(id:string){
     this.driversService.deleteDriver(id).subscribe(
       res => {
