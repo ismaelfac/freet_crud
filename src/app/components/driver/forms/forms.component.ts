@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Driver } from 'src/app/models/Driver';
 import { DriversService } from 'src/app/services/drivers.service';
 
@@ -9,7 +9,7 @@ import { DriversService } from 'src/app/services/drivers.service';
   styleUrls: ['./forms.component.css']
 })
 export class FormsComponent implements OnInit {
-  driver: Driver = {
+  driver: any = {
     first_name:  '',
     last_name: '',
     ssn: '',
@@ -19,18 +19,43 @@ export class FormsComponent implements OnInit {
     zip: '',
     phone: ''
   };
-  constructor(private driverService: DriversService, private router: Router) { }
+  editing: boolean = false;
+
+  constructor(private driverService: DriversService, private activeRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    const params = this.activeRoute.snapshot.params;
+    if(params['id']){
+      this.editing = true;
+      this.driverService.getDriver(params['id']).subscribe(
+        res => {
+          console.log(res);
+          this.driver = res;
+        },
+        err => console.error(err)
+      )
+    }
+    
   }
 
-  createOnUpdate(){
+  createDriver(){
     this.driverService.createDriver(this.driver).subscribe(
       res => {
+        console.log(res);
         this.router.navigate(['/drivers']);
       },
       err => console.log(err)
     );
+  }
+
+  updateDriver(){
+    this.driverService.updateDriver(this.driver.id, this.driver).subscribe(
+      res => {
+        console.log(res)
+        this.router.navigate(['/drivers']);
+      },
+      err => console.error(err)
+    )
   }
 
 }

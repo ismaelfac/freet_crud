@@ -21,7 +21,7 @@ export class DriversService {
     return this.httpClient.post(`${this.API_URL}/drivers`, driver);
   } 
 
-  updateDriver(id: string, updatedDriver: Driver){
+  updateDriver(id: string|number, updatedDriver: Driver){
     return this.httpClient.put(`${this.API_URL}/drivers/${id}`, updatedDriver);
   }
 

@@ -44,7 +44,7 @@
                 <label for="floatingTextarea">Telefono</label>
             </div>
             <div class="d-grid gap-2">
-                <button class="btn btn-primary" type="button" (click)="createOnUpdate()">Grabar</button>
+                <button class="btn btn-primary" type="button" (click)="editing ? updateDriver() : createDriver()">{{ editing ? 'Actualizar': 'Crear'}}</button>
               </div>
         </form>
     </div>

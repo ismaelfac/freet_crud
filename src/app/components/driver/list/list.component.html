@@ -24,7 +24,7 @@
         <td>@{{ driver.phone}}</td>
         <td>
           <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-              <button type="button" class="btn btn-warning" (click)="updateDriver(driver.id, driver)">Editar</button>
+              <button type="button" class="btn btn-warning" [routerLink]="['/drivers/edit', driver.id]">Editar</button>
               <button type="button" class="btn btn-danger" (click)="deleteDriver(driver.id)">Eliminar</button>
           </div>
         </td>

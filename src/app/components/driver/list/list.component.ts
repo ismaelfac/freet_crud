@@ -24,7 +24,7 @@ export class ListComponent implements OnInit {
     );
   }
 
-  updateDriver(id:string, driver: Driver){
+  editDriver(id:string, driver: Driver){
     this.driversService.updateDriver(id, driver).subscribe(
       res => {
         this.getDriver();
