@@ -12,9 +12,17 @@
     <div class="card-body">
         <form action="" class="row g-3">
             <div class="form-floating">
-                <input class="form-control" type="text" name="first_name" [(ngModel)]="routerForm.description"/>
-                <label for="floatingTextarea">Descripcion</label>
+                <input class="form-control" type="text" name="first_name" [(ngModel)]="routerForm.first_name"/>
+                <label for="floatingTextarea">Conductor</label>
             </div>
+            <div class="form-floating">
+              <input class="form-control" type="text" name="vehiculo" [(ngModel)]="routerForm.vehiculo"/>
+              <label for="floatingTextarea">Vehiculo</label>
+          </div>
+          <div class="form-floating">
+            <input class="form-control" type="text" name="description" [(ngModel)]="routerForm.description"/>
+            <label for="floatingTextarea">Descripcion</label>
+        </div>
             <div class="d-grid gap-2">
                 <button class="btn btn-primary" type="button" (click)="editing ? updateRoute() : createRoute()">{{ editing ? 'Actualizar': 'Crear'}}</button>
             </div>

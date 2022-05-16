@@ -11,8 +11,8 @@
     <tbody class="table-group-divider" *ngFor="let route of listRoutes">
       <tr>
         <th scope="row">{{ route.id }}</th>
-        <td></td>
-        <td></td>
+        <td>{{ route.first_name }} {{ route.last_name }}</td>
+        <td>{{ route.vehiculo }}</td>
         <td>{{ route.description}}</td>
         <td>
           <div class="btn-group" role="group" aria-label="Basic mixed styles example">

@@ -10,6 +10,8 @@ import { RoutesService } from 'src/app/services/routes.service';
 })
 export class RoutesFormComponent implements OnInit {
   routerForm: any = {
+    first_name: '',
+    vehiculo: '',
     driver_id:  0,
     vehicle_id: 0,
     description: ''
@@ -25,6 +27,7 @@ export class RoutesFormComponent implements OnInit {
         res => {
           console.log(res);
           this.routerForm = res;
+          this.routerForm = this.routerForm[0];
         },
         err => console.error(err)
       )

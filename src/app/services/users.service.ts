@@ -28,6 +28,10 @@ export class UsersService {
   }
 
   getUser() {
-    return this.httpClient.get(`${this.API_URL}/me`);
+    return this.httpClient.post(`${this.API_URL}/me`, 1);
+  }
+
+  getUserLogged(){
+    const token = this.getToken();
   }
 }

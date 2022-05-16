@@ -23,7 +23,7 @@
           </li>
         </ul>
       </div>
-      <form class="d-flex" role="search">
+      <form class="d-flex" role="search" *ngIf="!existUser">
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" routerLink="login">Login</a>
@@ -33,5 +33,6 @@
           </li>
         </ul>
       </form>
+      <a href=""></a>
     </div>
   </nav>
