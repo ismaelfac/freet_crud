@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { SchedulersService } from 'src/app/services/schedulers.service';
 
 @Component({
   selector: 'app-scheduler-form',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./scheduler-form.component.css']
 })
 export class SchedulerFormComponent implements OnInit {
-
-  constructor() { }
+  listRoutes: any = [];
+  constructor(private schedulerService: SchedulersService, private activeRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+
   }
+
 
 }

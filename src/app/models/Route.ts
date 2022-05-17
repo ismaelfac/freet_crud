@@ -1,7 +1,7 @@
 export interface Route {
     id?: number;
-    first_name: string;
-    vehiculo: string;
+    full_name: string;
+    vehicle: string;
     driver_id: number;
     vehicle_id: number;
     description: string;

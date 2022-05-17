@@ -17,6 +17,10 @@ export class DriversService {
     return this.httpClient.get(`${this.API_URL}/drivers/${id}`)
   }
 
+  getDriverFullName() {
+    return this.httpClient.get(`${this.API_URL}/getDriverFullName`)
+  }
+
   createDriver(driver:Driver){
     return this.httpClient.post(`${this.API_URL}/drivers`, driver);
   } 

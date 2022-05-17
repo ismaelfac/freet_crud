@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Route } from 'src/app/models/Route';
+import { DriversService } from 'src/app/services/drivers.service';
 import { RoutesService } from 'src/app/services/routes.service';
 
 @Component({
@@ -9,20 +10,27 @@ import { RoutesService } from 'src/app/services/routes.service';
   styleUrls: ['./routes-form.component.css']
 })
 export class RoutesFormComponent implements OnInit {
+  listDrivers: any = [];
   routerForm: any = {
-    first_name: '',
-    vehiculo: '',
+    full_name: '',
+    vehicle: '',
     driver_id:  0,
     vehicle_id: 0,
     description: ''
   };
   editing: boolean = false;
-  constructor(private routerService: RoutesService, private activeRoute: ActivatedRoute, private router: Router) { }
+  constructor(private driverService: DriversService, private routerService: RoutesService, private activeRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     const params = this.activeRoute.snapshot.params;
     if(params['id']){
       this.editing = true;
+      this.driverService.getDriverFullName().subscribe(
+        res => {
+          this.listDrivers = res
+        },
+        err => console.error(err)
+      )
       this.routerService.getRoute(params['id']).subscribe(
         res => {
           console.log(res);
